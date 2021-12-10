@@ -6,7 +6,7 @@
 /*   By: lsidan <lsidan@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 08:27:48 by lsidan            #+#    #+#             */
-/*   Updated: 2021/12/08 13:02:02 by lsidan           ###   ########lyon.fr   */
+/*   Updated: 2021/12/10 16:38:47 by lsidan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,16 @@ int	julia(t_data *d)
 
 	iter = 0;
 	d->i = d->x / d->zoom + d->x1;
-	d->_i = pow(d->i, 2);
 	d->j = d->y / d->zoom + d->y1;
-	d->_j = pow(d->j, 2);
+	d->_i = d->i * d->i;
+	d->_j = d->j * d->j;
 	while (d->_i + d->_j < 4 && iter < d->iter_max)
 	{
-		d->_i = pow(d->i, 2);
-		d->_j = pow(d->j, 2);
-		d->i_temp = d->_i - d->_j;
-		d->j = 2 * d->i * d->j + d->im;
-		d->i = d->i_temp + d->re;
+		d->_i = d->i * d->i;
+		d->_j = d->j * d->j;
+		d->j = d->i * d->j;
+		d->j = d->j + d->j + d->im;
+		d->i = d->_i - d->_j + d->re;
 		iter++;
 	}
 	return (iter);

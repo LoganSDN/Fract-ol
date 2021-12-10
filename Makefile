@@ -1,6 +1,6 @@
 NAME	=	fractol
 CC		=	gcc
-CFLAGS	=	-Wall -Werror -Wextra
+CFLAGS	=	-Wall -Werror -Wextra -Ofast
 
 SRCS	=	main.c \
 			srcs/mandelbrot.c \
@@ -12,7 +12,8 @@ SRCS	=	main.c \
 			srcs/error.c \
 			srcs/burning_ship.c \
 			srcs/mouse.c \
-			srcs/help.c
+			srcs/help.c \
+			srcs/color.c
 
 OBJS	=	${SRCS:.c=.o}
 
