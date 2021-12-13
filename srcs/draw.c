@@ -6,7 +6,7 @@
 /*   By: lsidan <lsidan@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 18:49:07 by lsidan            #+#    #+#             */
-/*   Updated: 2021/12/10 16:38:39 by lsidan           ###   ########.fr       */
+/*   Updated: 2021/12/13 19:07:08 by lsidan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@ void	put_pxl_to_img(t_data *d, int color)
 
 void	ft_create_color(t_data *d, int iter)
 {
-	double	k;
 	int		color;
 
-	k = iter;
 	if (iter != d->iter_max)
 		color = smooth(d, iter).value;
 	else

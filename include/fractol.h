@@ -6,7 +6,7 @@
 /*   By: lsidan <lsidan@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 12:06:26 by lsidan            #+#    #+#             */
-/*   Updated: 2021/12/10 16:38:49 by lsidan           ###   ########.fr       */
+/*   Updated: 2021/12/13 19:49:39 by lsidan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@ typedef unsigned char	t_char;
 
 typedef struct s_pal
 {
-	t_char		count;
+	int			count;
 	int			colors[16];
 }					t_pal;
 
 typedef struct s_rgba
 {
 	t_char	r;
-	t_char	g;
 	t_char	b;
+	t_char	g;
 	t_char	a;
 }	t_rgba;
 
@@ -88,7 +88,7 @@ void		ft_burning_ship_init(t_data *d);
 //DRAW FUNCTIONS
 void		put_pxl_to_img(t_data *d, int color);
 void		ft_draw(t_data *d, int (*f)(t_data *));
-t_color		linear_color(double i, int max, t_pal *p);
+t_color		linear_color(double i, int iter_max, t_pal *p);
 t_color		color_lerp(t_color c1, t_color c2, double p);
 int			lerp(int v0, int v1, double p);
 t_pal		*get_pal(void);
